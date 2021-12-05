@@ -1,0 +1,23 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    // id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.5.31'
+}
+
+java {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-core:${versions.serialization}"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:${versions.serialization}"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-protobuf:${versions.serialization}"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-cbor:${versions.serialization}"
+    testImplementation "junit:junit:${versions.junit}"
+
+    implementation "com.github.uk-taniyama.quack:quack-java:${versions.quack}"
+    testImplementation "com.github.uk-taniyama.quack:quack-jni:${versions.quack}"
+}

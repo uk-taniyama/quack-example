@@ -1,0 +1,26 @@
+plugins {
+    id 'application'
+    id 'kotlin'
+    // id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.5.31'
+}
+
+java {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}
+
+application {
+    mainClass = 'com.example.quack_example.cli.MainKt'
+}
+
+dependencies {
+    implementation project(':lib')
+
+    implementation platform('org.jetbrains.kotlin:kotlin-bom')
+
+    testImplementation "junit:junit:${versions.junit}"
+
+    implementation "com.github.uk-taniyama.quack:quack-jni:${versions.quack}"
+}

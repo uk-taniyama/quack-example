@@ -1,0 +1,14 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url "https://uk-taniyama.github.io/maven/repository"
+        }
+    }
+}
+rootProject.name = "quack-example"
+include ':app'
+include ':lib'
+include ':cli'
